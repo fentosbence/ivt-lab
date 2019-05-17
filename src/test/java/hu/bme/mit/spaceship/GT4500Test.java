@@ -12,7 +12,7 @@ public class GT4500Test {
 
   @BeforeEach
   public void init(){
-    mock();
+    ship = mock(GT4500.class);
   }
 
   @Test
