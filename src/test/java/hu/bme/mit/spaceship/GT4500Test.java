@@ -9,12 +9,12 @@ import static org.mockito.Mockito.*;
 public class GT4500Test {
 
   private GT4500 ship;
-  private TorpedoStore primary;
-  private TorpedoStore secondary;
+  TorpedoStore primary;
+  TorpedoStore secondary;
 
   @BeforeEach
   public void init(){
-   primary = mock(TorpedoStore.class);
+    primary = mock(TorpedoStore.class);
     secondary = mock(TorpedoStore.class);
     ship = new GT4500(primary, secondary);
   }
@@ -22,7 +22,7 @@ public class GT4500Test {
   @Test
   public void fireTorpedo_Single_Success(){
     // Arrange
-    when(primary.fire(1)).thanReturn(true);
+    when(primary.fire(1)).thenReturn(true);
     // Act
     boolean result = ship.fireTorpedo(FiringMode.SINGLE);
 
